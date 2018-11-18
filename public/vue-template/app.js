@@ -2,7 +2,7 @@ const SECTIONS = "all, white, red, blue, grees, pink";
 const SIZELIST = "XS, S, M, L, LL, 3L"
 
 Vue.component('item-list', {
-  props: ['items', 'size'],
+  props: ['items'],
   template: `
     <section>
       <div class="row mb-5">
@@ -21,10 +21,10 @@ Vue.component('item-list', {
                     
                   <div class="card-section">
                     <p>{{ item.price }}</p>
-                    <select v-model="size">
+                    <select v-model="item.size">
                       <option v-for="size in item.present_stock_size" :value="size">{{ size }}</option>
                     </select>
-                    <p>{{ size }}</p>
+                    <p>{{ item.size }}</p>
                     <a href="item" class="button">Add To Cart</a>
                   </div>
                 </div>
